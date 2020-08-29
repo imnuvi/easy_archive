@@ -9,3 +9,4 @@ A collection of solutions to easy problems I have come across in my time of prob
 4. no. of strings/ no. of strings complicated
 5. counter problem
 6. list filler problem
+7. quartiles
