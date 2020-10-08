@@ -1,3 +1,6 @@
+#given a list of people and their tweets count the person with max tweets and order equal tweeters based on alphabetical order
+
+
 #helper function
 def max_tweeter():
     #initializing dictionary (keys:names, values:count)
