@@ -13,7 +13,6 @@ for i in range(0,n+1):
     cnt = fact(n)
     divx = fact(i)
     divy = fact(n-i)
-    print(cnt,divx,divy)
     ans += (cnt/(divx*divy))**2
 
-print(ans)
+print(round(ans))
