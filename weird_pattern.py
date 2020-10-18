@@ -14,6 +14,6 @@
 a = int(input())
 b = int(input())
 flag = "inc"
-for i in range(1,a+1):
-    flag="inc" if ((i-1)%(b*2) < b) else "dec"
-    print("*"*((i-1)%(b*2))  , i) if flag=="inc" else print("*"*((i-1)%(b*2) -i-1),i)
+for i in range(0,a):
+    flag="inc" if ((i)%(b*2 - 1) < b) else "dec"
+    print("*"*((i)%(b*2 - 1))  , i) if flag=="inc" else print("*"*((b*2-1)-(i%(b*2))-1), i )
