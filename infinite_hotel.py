@@ -6,5 +6,5 @@ b = list(map(int,input().split()))
 b.sort()
 
 
-print(a)
+print(a,a)
 print(b)
