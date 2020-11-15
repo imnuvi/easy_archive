@@ -7,7 +7,7 @@ b = list(map(int,input().split()))
 b.sort()
 
 for val,cnt in itertools.groupby(b):
-	if len(list(cnt)) == 5:
+	if len(list(cnt)) == a:
 		continue
 	else:
 		print(val)
