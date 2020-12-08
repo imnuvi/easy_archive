@@ -23,5 +23,5 @@ def white(years,rats):
         return (x+y+z)*rats
 
 
-print(white(years,rats))
-# print(abs(white(years,rats)-black(years,rats)))
+# print(white(years,rats))
+print(abs(white(years,rats)-black(years,rats)))
