@@ -6,21 +6,26 @@
 
 years ,rats = list(map(int,input().split()))
 
-white = black = rats
+# white = black = rats
 
 def black(years,rats):
-    for i in range(years):
-        rats = rats*3
-    return rats
+    prev = 0
+    current = rats
+    for i in range(years+1):
+        current = (current*3)
+    return current
 
 def white(years,rats):
     prev = 0
     two_prev = 0
     three_prev = 0
     current = rats
-    for i in range(years):
+    for i in range(years-1):
         current = (current*2) + (prev * 3) + (two_prev) - (three_prev)
         three_prev = two_prev
         two_prev = prev
         prev = current
     return current
+
+print(black(years,rats))
+# print(abs(white(years,rats)-black(years,rats)))
