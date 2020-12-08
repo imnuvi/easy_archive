@@ -11,4 +11,4 @@ for i in lst:
     else:
         odd += i
 
-print(odd-eve)
+print(odd-eve
