@@ -14,5 +14,13 @@ def black(years,rats):
     return rats
 
 def white(years,rats):
+    prev = 0
+    two_prev = 0
+    three_prev = 0
+    current = rats
     for i in range(years):
-        
+        current = (current*2) + (prev * 3) + (two_prev) - (three_prev)
+        three_prev = two_prev
+        two_prev = prev
+        prev = current
+    return current
