@@ -7,6 +7,10 @@ temp = [a[0]]
 ans = a[0]
 curans = a[0]
 for i in range(1,len(a)):
+    if (a[i] == ans[-1]):
+        curans += a[i]
+    else:
+        curans = a[i]
     if a[i] in temp:
         ans += a[i]
     elif(len(temp) < 2):
@@ -16,10 +20,7 @@ for i in range(1,len(a)):
         ans = curans
         temp.pop(0)
         temp.append(a[i])
-    if (a[i] == ans[-1]):
-        curans += a[i]
-    else:
-        curans = a[i]
+
     print(curans)
 
 
