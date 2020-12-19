@@ -24,7 +24,7 @@ for i in range(1,len(a)):
         curans = a[i]
         temp.pop(0)
         temp.append(a[i])
-    if (len(ans) >= longe):
+    if (len(ans) >= len(longe)):
         longe = ans
 
     # print(ans)
