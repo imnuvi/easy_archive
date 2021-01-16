@@ -7,4 +7,5 @@ for i in range(a):
     if (x[0] == 1):
         lst.append((x[1]**2)+(x[2]**2))
     else:
+        lst.sort()
         print(lst[b-1])
