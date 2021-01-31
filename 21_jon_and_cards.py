@@ -19,5 +19,5 @@ for i in range(a):
         elif i in conso:
             ans += "*" + i
         else:
-            ans += "*" + lower(i)
+            ans += "*" + i.lower()
     print(ans)
