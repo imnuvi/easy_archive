@@ -9,3 +9,4 @@ elif len(newl == 2):
     print(newl[0]+newl[1],end="")
 else:
     print(newl[1] + newl[-2],end="")
+ 
