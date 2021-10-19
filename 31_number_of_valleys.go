@@ -1,3 +1,6 @@
+// Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
+// uphill U, or a downhill D 
+
 package main
 
 import (
