@@ -31,7 +31,7 @@ defmodule Solution do
         end
 
       true ->
-        mymap
+        %{error: true}
     end
   end
 
