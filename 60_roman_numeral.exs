@@ -21,20 +21,15 @@ defmodule Solution do
   end
 
   def logic([a], map, ans) do
-    IO.inspect(a)
     ans + Map.get(map, a)
   end
 
   def logic(lss, map, ans) do
     key1 = Enum.at(lss, 0)
     key2 = Enum.at(lss, 1)
-    IO.inspect(key1)
-    IO.inspect(key2)
 
     val1 = Map.get(map, key1)
     val2 = Map.get(map, key2)
-    IO.inspect(val1)
-    IO.inspect(val2)
 
     cond do
       val1 > val2 ->
@@ -57,8 +52,6 @@ defmodule Solution do
     lss =
       String.graphemes(s)
       |> logic(roman_map, 0)
-
-    IO.inspect(lss)
   end
 end
 
