@@ -20,10 +20,19 @@ defmodule Solution do
 
   @spec tribonacci(n :: integer) :: integer
   def tribonacci(n) do
-    inlist = [0, 1, 1]
-    solved = solver(inlist, n-(Enum.count(inlist)-1))
-    Enum.at(solved, Enum.count(solved)-1)
+    case n do
+      0 ->
+        0
+      1 ->
+        1
+      2 ->
+        1
+      _ ->
+        inlist = [0, 1, 1]
+        solved = solver(inlist, n-(Enum.count(inlist)-1))
+        Enum.at(solved, Enum.count(solved)-1)
+    end
   end
 end
 
-IO.inspect(Solution.tribonacci(4))
+# IO.inspect(Solution.tribonacci(4))
