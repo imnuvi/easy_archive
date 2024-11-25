@@ -1,23 +1,29 @@
+# https://leetcode.com/problems/isomorphic-strings/description/
+
+# Given two strings s and t, determine if they are isomorphic.
+
+# Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+
+# All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+
+
 defmodule Solution do
-  def construct_recurrence_map(character, count_map) do
+  def list_parser({char1, char2}, {map, track}) do
     cond do
-      Map.has_key?(count_map, character) ->
-        {count_map, Map.get(count_map, character)}
+      Map.has_key?(map, char1) ->
+        cond do
+          char2 == Map.get(map, char1) ->
+            {:cont, {map, track+1}}
+          true ->
+            {:halt, {map, track}}
+          end
       true ->
-        msize = map_size(count_map)+1
-        {Map.put(count_map, character, msize), msize}
-    end
-  end
-
-  def list_parser({char1, char2}, {map1, map2, track}) do
-    {nmap1, nsize1} = construct_recurrence_map(char1, map1)
-    {nmap2, nsize2} = construct_recurrence_map(char2, map2)
-    cond do
-      nsize1 == nsize2 ->
-        {:cont, {nmap1, nmap2, track+1}}
-
-      true ->
-        {:halt, {nmap1, nmap2, track}}
+        cond do
+          Enum.member?(Map.values(map), char2) ->
+            {:halt, {map, track}}
+          true ->
+            {:cont, {Map.put(map, char1, char2), track+1}}
+        end
     end
   end
 
@@ -26,14 +32,13 @@ defmodule Solution do
     s = String.to_charlist(s)
     t = String.to_charlist(t)
     zip = Enum.zip(s,t)
-    {_res1, _res2, track} = Enum.reduce_while(zip, {%{}, %{}, 0}, &list_parser/2)
+    {_res1, track} = Enum.reduce_while(zip, {%{}, 0}, &list_parser/2)
     cond do
       track == Enum.count(s) ->
         true
       true ->
         false
     end
-
   end
 end
 
